@@ -9,68 +9,56 @@
 
     <h1>Dates des Grands Prix</h1>
 
-    <p>Appuyez sur le bouton pour ranger le tableau dans l'ordre alphabétique, par pays:</p>
-    <p><button onclick="sortTable()">Sort</button></p>
-
-    <table id="myTable">
-        <tr>
-          <th>Circuit</th>
-          <th>Pays</th>
-          <th>Dates</th>
-        </tr>
-        <tr>
-            <td>Monte Carlo</td>
-            <td>Monaco</td>
-            <td>23 mai</td>
-        </tr>
-        <tr>
-            <td>Zandvoort</td>
-            <td>Pays-Bas</td>
-            <td>5 septembre</td>
-        </tr>
-        <tr>
-          <td>Yas Marina</td>
-          <td>Abu Dhabi</td>
-          <td>12 novembre</td>
-        </tr>
-      </table>
-
-      <script>
-        function sortTable() {
-          var table, rows, switching, i, x, y, shouldSwitch;
-          table = document.getElementById("myTable");
-          switching = true;
-          /*Make a loop that will continue until
-          no switching has been done:*/
-          while (switching) {
-            //start by saying: no switching is done:
-            switching = false;
-            rows = table.rows;
-            /*Loop through all table rows (except the
-            first, which contains table headers):*/
-            for (i = 1; i < (rows.length - 1); i++) {
-              //start by saying there should be no switching:
-              shouldSwitch = false;
-              /*Get the two elements you want to compare,
-              one from current row and one from the next:*/
-              x = rows[i].getElementsByTagName("TD")[2];
-              y = rows[i + 1].getElementsByTagName("TD")[2];
-              //check if the two rows should switch place:
-              if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
-                //if so, mark as a switch and break the loop:
-                shouldSwitch = true;
-                break;
-              }
-            }
-            if (shouldSwitch) {
-              /*If a switch has been marked, make the switch
-              and mark that a switch has been done:*/
-              rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
-              switching = true;
-            }
-          }
-        }
-        </script>
+    <ul id="tableau">
+      <li>Mars</li>
+      <ul>
+        <li>Grand Prix de Bahreïn à Sakhir le 20 mars 2022</li>
+        <li>Grand Prix d'Arabie Saoudite à Djeddah le 27 mars 2022</li>
+      </ul>
+      <li>Avril</li>
+      <ul>
+        <li>Grand Prix d'Australie à Melbourne le 10 avril 2022</li>
+        <li>Grand Prix d'Emilie-Romagne à Imola le 24 avril 2022</li>
+      </ul>
+      <li>Mai</li>
+      <ul>
+        <li>Grand Prix de Miami le 8 mai 2022</li>
+        <li>Grand Prix d'Espagne à Barcelone le 22 mai 2022</li>
+        <li>Grand Prix de Monaco à Monaco le 29 mai 2022</li>
+      </ul>
+      <li>Juin</li>
+      <ul>
+        <li>Grand Prix d'Azerbaïdjan à Bakou le 12 juin 2022</li>
+        <li>Grand Prix du Canada à Montréal le 19 juin 2022</li>
+      </ul>
+      <li>Juillet</li>
+      <ul>
+        <li>Grand Prix de Grande-Bretagne à Silverstone le 3 juillet 2022</li>
+        <li>Grand Prix de France au Castellet le 24 juillet 2022</li>
+        <li>Grand Prix de Hongrie au Hungaroring le 31 juillet 2022</li>
+      </ul>
+      <li>Août</li>
+      <ul>
+        <li>Grand Prix de Belgique à Spa-Francorchamps le 28 août 2022</li>
+      </ul>
+      <li>Septembre</li>
+      <ul>
+        <li>Grand Prix d'Italie à Monza le 11 septembre 2022</li>
+        <li>Grand Prix de Russie à Sotchi le 25 septembre 2022</li>
+      </ul>
+      <li>Octobre</li>
+      <ul>
+        <li>Grand Prix de Singapour à Marina Bay le 2 octobre 2022</li>
+        <li>Grand Prix du Japon à Suzuka le 9 octobre 2022</li>
+        <li>Grand Prix des Etats-Unis à Austin le 23 octobre 2022</li>
+        <li>Grand Prix du Mexique à Mexico le 30 octobre 2022</li>
+      </ul>
+      <li>Novembre</li>
+      <ul>
+        <li>Grand Prix du Brésil à Interlagos le 13 novembre 2022</li>
+        <li>Grand Prix d'Abu Dhabi à Yas Marina le 20 novembre 2022</li>
+      </ul>
+    </ul>
 
 <div class="sidenav">
     <img src="F1 Hotel.jpg" alt="Snow" style="width:75%;">
@@ -102,9 +90,6 @@
       });
     }
     </script>
-
-
-
 
 
 </body>
