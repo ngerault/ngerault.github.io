@@ -2,32 +2,73 @@
 <html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Canoë.com</title>
+<title>F1 Hotel.com</title>
 <link rel="stylesheet" type="text/css" href="./Css.css"/>
 </head>
 <body>
 
-  <div id="myNav" class="overlay">
-    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-    <div class="overlay-content">
-      <a href="#">About</a>
-      <a href="#">Services</a>
-      <a href="#">Clients</a>
-      <a href="#">Contact</a>
+  
+  <video autoplay muted loop id="myVideo">
+    <source src="Race Highlights  2021 Abu Dhabi Grand Prix_Trim.mp4" type="video/mp4">
+    Your browser does not support HTML5 video.
+  </video>
+  
+  <div class="content">
+    <h1>Heading</h1>
+    <p>Lorem ipsum dolor sit amet, an his etiam torquatos. Tollit soleat phaedrum te duo, eum cu recteque expetendis neglegentur. Cu mentitum maiestatis persequeris pro, pri ponderum tractatos ei. Id qui nemore latine molestiae, ad mutat oblique delicatissimi pro.</p>
+    <button id="myBtn" onclick="myFunction()">Pause</button>
+  </div>
+  
+  <script>
+  var video = document.getElementById("myVideo");
+  var btn = document.getElementById("myBtn");
+  
+  function myFunction() {
+    if (video.paused) {
+      video.play();
+      btn.innerHTML = "Pause";
+    } else {
+      video.pause();
+      btn.innerHTML = "Play";
+    }
+  }
+  </script>
+
+
+
+
+
+  <div class="sidenav">
+    <img src="F1 Hotel.jpg" alt="Snow" style="width:75%;">
+    <a href="index.html">Accueil</a>
+    <a href="Dates.html">Dates</a>
+    <button class="dropdown-btn">Hotel
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-container">
+      <a href="Pays-Bas.html">Pays-Bas</a>
+      <a href="Abu Dhabi.html">Abu Dhabi </a>
+      <a href="Monaco.html">Monaco</a>
     </div>
   </div>
 
-  <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; </span>
-  
   <script>
-  function openNav() {
-    document.getElementById("myNav").style.width = "100%";
-  }
-  
-  function closeNav() {
-    document.getElementById("myNav").style.width = "0%";
-  }
-  </script>
+    /* Loop through all dropdown buttons to toggle between hiding and showing its dropdown content - This allows the user to have multiple dropdowns without any conflict */
+    var dropdown = document.getElementsByClassName("dropdown-btn");
+    var i;
+    
+    for (i = 0; i < dropdown.length; i++) {
+      dropdown[i].addEventListener("click", function() {
+      this.classList.toggle("active");
+      var dropdownContent = this.nextElementSibling;
+      if (dropdownContent.style.display === "block") {
+      dropdownContent.style.display = "none";
+      } else {
+      dropdownContent.style.display = "block";
+      }
+      });
+    }
+    </script>
        
   </body>
   </html>
