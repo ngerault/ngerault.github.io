@@ -2,29 +2,10 @@ h1 {
     text-align:center;
 }
 
-p {
-    margin-left: 200px;
+#tableau {
+  margin-left: 250px;
+
 }
-
-table {
-    position: absolute;
-    left: 250px;
-    border-spacing: 0;
-    width: 50%;
-    border: 10px solid #ddd;
-  }
-  
-  th, td {
-    text-align: left;
-    padding: 16px;
-  }
-  
-  tr:nth-child(even) {
-    background-color: #f2f2f2
-  }
-
-
-
 
 
 
