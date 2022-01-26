@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>F1 Hotel.com</title>
+<link rel="stylesheet" type="text/css" href="./Dates.css"/>
+</head>
+<body>
+
+    <h1>Dates des Grands Prix</h1>
+
+    <p>Appuyez sur le bouton pour ranger le tableau dans l'ordre alphabétique, par pays:</p>
+    <p><button onclick="sortTable()">Sort</button></p>
+
+    <table id="myTable">
+        <tr>
+          <th>Circuit</th>
+          <th>Pays</th>
+          <th>Dates</th>
+        </tr>
+        <tr>
+            <td>Monte Carlo</td>
+            <td>Monaco</td>
+            <td>23 mai</td>
+        </tr>
+        <tr>
+            <td>Zandvoort</td>
+            <td>Pays-Bas</td>
+            <td>5 septembre</td>
+        </tr>
+        <tr>
+          <td>Yas Marina</td>
+          <td>Abu Dhabi</td>
+          <td>12 novembre</td>
+        </tr>
+      </table>
+
+      <script>
+        function sortTable() {
+          var table, rows, switching, i, x, y, shouldSwitch;
+          table = document.getElementById("myTable");
+          switching = true;
+          /*Make a loop that will continue until
+          no switching has been done:*/
+          while (switching) {
+            //start by saying: no switching is done:
+            switching = false;
+            rows = table.rows;
+            /*Loop through all table rows (except the
+            first, which contains table headers):*/
+            for (i = 1; i < (rows.length - 1); i++) {
+              //start by saying there should be no switching:
+              shouldSwitch = false;
+              /*Get the two elements you want to compare,
+              one from current row and one from the next:*/
+              x = rows[i].getElementsByTagName("TD")[2];
+              y = rows[i + 1].getElementsByTagName("TD")[2];
+              //check if the two rows should switch place:
+              if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
+                //if so, mark as a switch and break the loop:
+                shouldSwitch = true;
+                break;
+              }
+            }
+            if (shouldSwitch) {
+              /*If a switch has been marked, make the switch
+              and mark that a switch has been done:*/
+              rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+              switching = true;
+            }
+          }
+        }
+        </script>
+
+<div class="sidenav">
+    <img src="F1 Hotel.jpg" alt="Snow" style="width:75%;">
+    <a href="index.html">Accueil</a>
+    <a href="Dates.html">Dates</a>
+    <button class="dropdown-btn">Hotels
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-container">
+      <a href="Pays-Bas.html">Pays-Bas</a>
+      <a href="Abu Dhabi.html">Abu Dhabi </a>
+      <a href="Monaco.html">Monaco</a>
+    </div>
+  </div>
+  <script>
+    /* Loop through all dropdown buttons to toggle between hiding and showing its dropdown content - This allows the user to have multiple dropdowns without any conflict */
+    var dropdown = document.getElementsByClassName("dropdown-btn");
+    var i;
+    
+    for (i = 0; i < dropdown.length; i++) {
+      dropdown[i].addEventListener("click", function() {
+      this.classList.toggle("active");
+      var dropdownContent = this.nextElementSibling;
+      if (dropdownContent.style.display === "block") {
+      dropdownContent.style.display = "none";
+      } else {
+      dropdownContent.style.display = "block";
+      }
+      });
+    }
+    </script>
+
+
+
+
+
+</body>
+</html>
